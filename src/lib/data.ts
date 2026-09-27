@@ -64,11 +64,15 @@ export type TeamMember = {
   displayOrder: number;
 };
 
-/* Image helpers */
-const U = (id: string) =>
-  `https://images.unsplash.com/${id}?q=80&w=1600&auto=format&fit=crop`;
-const PX = (id: string, ext = "jpeg") =>
+/* Image helpers — stock photos (Unsplash/Pexels) are mirrored locally in
+   public/images/stock and resolved through STOCK_URLS for same-origin serving. */
+import { STOCK_URLS } from "@/lib/stock-urls";
+
+const unFull = (id: string) => `https://images.unsplash.com/${id}?q=80&w=1600&auto=format&fit=crop`;
+const pxFull = (id: string, ext = "jpeg") =>
   `https://images.pexels.com/photos/${id}/pexels-photo-${id}.${ext}?auto=compress&cs=tinysrgb&fit=crop&h=827&w=1400`;
+const U = (id: string) => STOCK_URLS[unFull(id)] ?? unFull(id);
+const PX = (id: string, ext = "jpeg") => STOCK_URLS[pxFull(id, ext)] ?? pxFull(id, ext);
 
 import { POOL_LIFESTYLE } from "@/lib/media";
 

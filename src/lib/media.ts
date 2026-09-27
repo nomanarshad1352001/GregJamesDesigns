@@ -1,8 +1,13 @@
-/* Verified stock imagery pools (Pexels + Unsplash) used across the site. */
+/* Verified stock imagery pools (Pexels + Unsplash) used across the site.
+   All photos are mirrored locally in public/images/stock and served same-origin. */
 
-const PX = (id: string, ext = "jpeg") =>
+import { STOCK_URLS } from "@/lib/stock-urls";
+
+const unFull = (id: string) => `https://images.unsplash.com/${id}?q=80&w=1600&auto=format&fit=crop`;
+const pxFull = (id: string, ext = "jpeg") =>
   `https://images.pexels.com/photos/${id}/pexels-photo-${id}.${ext}?auto=compress&cs=tinysrgb&fit=crop&h=827&w=1400`;
-const UN = (id: string) => `https://images.unsplash.com/${id}?q=80&w=1600&auto=format&fit=crop`;
+const PX = (id: string, ext = "jpeg") => STOCK_URLS[pxFull(id, ext)] ?? pxFull(id, ext);
+const UN = (id: string) => STOCK_URLS[unFull(id)] ?? unFull(id);
 
 /** Warm interiors — living rooms, kitchens, chalets, open-plan spaces */
 export const POOL_INTERIOR = [
