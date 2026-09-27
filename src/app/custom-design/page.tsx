@@ -55,7 +55,7 @@ export default function CustomDesignPage() {
       <section className="relative overflow-hidden bg-navy-deep">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/images/hero-barndominium.jpg"
+          src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2000&auto=format&fit=crop"
           alt=""
           className="absolute inset-0 h-full w-full object-cover opacity-30"
         />
@@ -161,9 +161,9 @@ export default function CustomDesignPage() {
           </div>
           <div className="mt-10 grid gap-4 sm:grid-cols-3">
             {[
-              { src: "/images/renders/lodge.jpg", alt: "Custom lodge barndominium", label: "Family Lodge · Oklahoma" },
-              { src: "/images/interior-great-room.jpg", alt: "Custom great room interior", label: "Great room · Interior design" },
-              { src: "/images/loyston-venue.jpg", alt: "The Loyston venue", label: "The Loyston · Tennessee" },
+              { src: "https://images.pexels.com/photos/36777966/pexels-photo-36777966.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=827&w=1400", alt: "Custom lodge barndominium", label: "Family Lodge · Oklahoma" },
+              { src: "https://images.pexels.com/photos/7746642/pexels-photo-7746642.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=827&w=1400", alt: "Custom great room interior", label: "Great room · Interior design" },
+              { src: "https://images.pexels.com/photos/14399476/pexels-photo-14399476.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=827&w=1400", alt: "The Loyston venue", label: "The Loyston · Tennessee" },
             ].map((img, i) => (
               <Reveal key={img.src} delay={i * 0.08}>
                 <figure className="group relative aspect-[4/3] overflow-hidden border border-line">

@@ -76,7 +76,7 @@ export default function ConsultationPage() {
             {[
               { src: POOL_CONSTRUCTION[4], alt: "Reviewing a roof frame on site", label: "Site & plan reviews" },
               { src: POOL_INTERIOR[3], alt: "Open-plan great room with fireplace", label: "Layout & lifestyle fit" },
-              { src: "/images/renders/shop-rv.jpg", alt: "Shop and RV barndominium rendering", label: "Shop & system choices" },
+              { src: "https://images.pexels.com/photos/37067773/pexels-photo-37067773.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=827&w=1400", alt: "Shop and RV barndominium rendering", label: "Shop & system choices" },
             ].map((img, i) => (
               <Reveal key={img.src} delay={i * 0.08}>
                 <figure className="group relative aspect-[16/10] overflow-hidden border border-line">

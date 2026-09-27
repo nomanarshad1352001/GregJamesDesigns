@@ -38,14 +38,11 @@ export function PlanGallery({ images, name }: { images: string[]; name: string }
       >
         <span className="relative block h-full w-full">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <motion.img
+          <img
             key={active}
             src={images[active]}
             alt={`${name} — view ${active + 1}`}
-            className="h-full w-full object-cover"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.45, ease: "easeOut" }}
+            className="fade-in h-full w-full object-cover"
           />
           {/* Brief light-trace signals the image change — replaces a plain crossfade */}
           <svg

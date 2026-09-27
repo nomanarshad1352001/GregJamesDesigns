@@ -155,7 +155,7 @@ export default function CareersPage() {
           {/* The business behind the dreams — in pictures */}
           <div className="mt-16 grid gap-6 border-t border-line pt-14 sm:grid-cols-3">
             {[
-              { src: "/images/hero-barndominium.jpg", alt: "Completed barndominium at dusk", label: "The homes we design" },
+              { src: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2000&auto=format&fit=crop", alt: "Completed barndominium at dusk", label: "The homes we design" },
               { src: POOL_CONSTRUCTION[6], alt: "Modern home under construction", label: "The builds they become" },
               { src: POOL_INTERIOR[8], alt: "Warm chalet interior with fireplace", label: "The lives they hold" },
             ].map((img, i) => (

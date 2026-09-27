@@ -288,6 +288,38 @@ input[type="range"] {
     0 10px 28px -8px rgba(217, 155, 53, 0.5);
 }
 
+/* Pure-CSS image entrance — images never wait on JS hydration */
+@keyframes fade-in-kf {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.fade-in {
+  animation: fade-in-kf 0.45s ease-out both;
+}
+@keyframes img-enter-kf {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.reveal-img {
+  animation: img-enter-kf 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .fade-in,
+  .reveal-img {
+    animation: none;
+  }
+}
+
 /* Logo accent pulse — 250ms brightness flash on hover; the mark itself never animates otherwise */
 @keyframes logo-pulse-kf {
   0% {

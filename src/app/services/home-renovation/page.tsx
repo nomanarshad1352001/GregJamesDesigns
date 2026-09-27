@@ -25,7 +25,7 @@ export default function HomeRenovationPage() {
         eyebrow="Design services"
         title="Home Renovation Design"
         body="We design home renovation and remodeling plans — from as-built documentation of what you have, to beautiful drawings of what it will become. Pricing is on a per-project basis."
-        image="/images/interior-great-room.jpg"
+        image="https://images.pexels.com/photos/7746642/pexels-photo-7746642.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=827&w=1400"
       />
 
       <section className="py-20 lg:py-24">
@@ -35,14 +35,14 @@ export default function HomeRenovationPage() {
               <div className="grid grid-cols-1 gap-4">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/images/interior-great-room.jpg"
+                  src="https://images.pexels.com/photos/7746642/pexels-photo-7746642.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=827&w=1400"
                   alt="Renovated open-concept interior with vaulted beams"
                   className="aspect-[16/10] w-full border border-line object-cover"
                 />
                 <div className="grid grid-cols-2 gap-4">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src="/images/renders/cottage.jpg"
+                    src="https://images.pexels.com/photos/3865399/pexels-photo-3865399.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=827&w=1400"
                     alt="Cottage style home exterior"
                     className="aspect-[4/3] w-full border border-line object-cover"
                   />

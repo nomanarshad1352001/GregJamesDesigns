@@ -44,7 +44,7 @@ async function HomeContent() {
       <section className="relative flex min-h-[92vh] items-center overflow-hidden bg-navy-deep">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/images/hero-barndominium.jpg"
+          src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2000&auto=format&fit=crop"
           alt="Modern barndominium home at dusk with glowing windows"
           className="absolute inset-0 h-full w-full object-cover"
         />
@@ -167,7 +167,7 @@ async function HomeContent() {
               <div className="relative">
                 <div className="absolute -left-4 -top-4 h-full w-full border border-gold/40" aria-hidden />
                 <ImageReveal
-                  src="/images/interior-great-room.jpg"
+                  src="https://images.pexels.com/photos/7746642/pexels-photo-7746642.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=827&w=1400"
                   alt="Open-concept barndominium great room with vaulted ceiling"
                   className="relative aspect-[4/3] w-full"
                 />
@@ -239,7 +239,7 @@ async function HomeContent() {
                 <div className="mt-10">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src="/images/renders/farmhouse.jpg"
+                    src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=1600&auto=format&fit=crop"
                     alt="White modern farmhouse barndominium rendering"
                     className="aspect-[3/2] w-full border border-line object-cover"
                   />
@@ -320,7 +320,7 @@ async function HomeContent() {
       <section className="relative overflow-hidden bg-navy-deep py-20 text-white lg:py-28">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/images/loyston-venue.jpg"
+          src="https://images.pexels.com/photos/14399476/pexels-photo-14399476.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=827&w=1400"
           alt=""
           className="absolute inset-0 h-full w-full object-cover opacity-25"
         />
@@ -364,7 +364,7 @@ async function HomeContent() {
               </div>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/images/loyston-venue.jpg"
+                src="https://images.pexels.com/photos/14399476/pexels-photo-14399476.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=827&w=1400"
                 alt="The Loyston wedding venue barndominium at blue hour"
                 className="mt-6 aspect-[16/9] w-full border border-white/15 object-cover"
               />
@@ -431,12 +431,12 @@ async function HomeContent() {
             <Reveal delay={0.1} className="order-1 lg:order-2">
               <div className="grid grid-cols-2 gap-4">
                 <ImageReveal
-                  src="/images/renders/lodge.jpg"
+                  src="https://images.pexels.com/photos/36777966/pexels-photo-36777966.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=827&w=1400"
                   alt="Rustic lodge barndominium rendering"
                   className="aspect-[3/4] w-full"
                 />
                 <ImageReveal
-                  src="/images/renders/lakehouse.jpg"
+                  src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=1600&auto=format&fit=crop"
                   alt="Lakefront barndominium rendering at golden hour"
                   className="mt-10 aspect-[3/4] w-full"
                   delay={0.12}

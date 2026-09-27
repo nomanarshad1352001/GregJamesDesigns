@@ -98,7 +98,7 @@ export default async function CustomizePage({
       <section className="relative overflow-hidden bg-navy-deep">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/images/renders/modern.jpg"
+          src="https://images.pexels.com/photos/8134820/pexels-photo-8134820.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=827&w=1400"
           alt=""
           className="absolute inset-0 h-full w-full object-cover opacity-30"
         />

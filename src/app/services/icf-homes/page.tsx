@@ -42,7 +42,7 @@ export default function IcfHomesPage() {
         eyebrow="Design services"
         title="ICF Homes"
         body="We now design ICF (Insulated Concrete Form) homes. The design process is the same you know from us — and we provide a complete, buildable set of plans."
-        image="/images/stock/px-8134821.jpg"
+        image="https://images.pexels.com/photos/8134821/pexels-photo-8134821.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=827&w=1400"
       />
 
       <section className="py-20 lg:py-24">
@@ -70,7 +70,7 @@ export default function IcfHomesPage() {
               <div className="grid gap-6">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/images/stock/px-36777847.jpg"
+                  src="https://images.pexels.com/photos/36777847/pexels-photo-36777847.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=827&w=1400"
                   alt="Modern concrete and white home exterior"
                   className="aspect-[16/10] w-full border border-line object-cover"
                 />

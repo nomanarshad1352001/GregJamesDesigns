@@ -1,11 +1,6 @@
-"use client";
-
-import { motion, useInView, useReducedMotion } from "framer-motion";
-import { useRef } from "react";
-
 /**
- * Reveal-mask image treatment — the photo resolves like a rendering
- * coming into focus (clip-path mask + gentle settle), never a slide.
+ * Reveal-mask image treatment — pure CSS so photos render immediately in
+ * SSR markup and still get a gentle eased entrance. No hydration required.
  */
 export function ImageReveal({
   src,
@@ -20,27 +15,15 @@ export function ImageReveal({
   imgClassName?: string;
   delay?: number;
 }) {
-  const ref = useRef<HTMLElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-80px" });
-  const reduce = useReducedMotion();
-
   return (
-    <motion.figure
-      ref={ref}
-      className={className}
-      initial={reduce ? { opacity: 0 } : { opacity: 0, clipPath: "inset(12% 6% 12% 6%)" }}
-      animate={inView ? { opacity: 1, clipPath: "inset(0% 0% 0% 0%)" } : {}}
-      transition={{ duration: 0.75, delay, ease: [0.16, 1, 0.3, 1] }}
-    >
+    <figure className={`reveal-img ${className}`} style={{ animationDelay: `${delay}s` }}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <motion.img
+      <img
         src={src}
         alt={alt}
         className={`h-full w-full object-cover ${imgClassName}`}
-        initial={reduce ? {} : { scale: 1.08 }}
-        animate={inView ? { scale: 1 } : {}}
-        transition={{ duration: 1.2, delay, ease: [0.22, 1, 0.36, 1] }}
+        loading="lazy"
       />
-    </motion.figure>
+    </figure>
   );
 }

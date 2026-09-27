@@ -1,13 +1,9 @@
-/* Verified stock imagery pools (Pexels + Unsplash) used across the site.
-   All photos are mirrored locally in public/images/stock and served same-origin. */
+/* Verified stock imagery pools — all photos served from the official
+   Unsplash and Pexels CDNs. */
 
-import { STOCK_URLS } from "@/lib/stock-urls";
-
-const unFull = (id: string) => `https://images.unsplash.com/${id}?q=80&w=1600&auto=format&fit=crop`;
-const pxFull = (id: string, ext = "jpeg") =>
+const PX = (id: string, ext = "jpeg") =>
   `https://images.pexels.com/photos/${id}/pexels-photo-${id}.${ext}?auto=compress&cs=tinysrgb&fit=crop&h=827&w=1400`;
-const PX = (id: string, ext = "jpeg") => STOCK_URLS[pxFull(id, ext)] ?? pxFull(id, ext);
-const UN = (id: string) => STOCK_URLS[unFull(id)] ?? unFull(id);
+const UN = (id: string) => `https://images.unsplash.com/${id}?q=80&w=1600&auto=format&fit=crop`;
 
 /** Warm interiors — living rooms, kitchens, chalets, open-plan spaces */
 export const POOL_INTERIOR = [
@@ -56,14 +52,14 @@ export const POOL_LIFESTYLE = [
 
 /** Homepage filmstrip — renders, jobsites and completed interiors */
 export const MARQUEE_IMAGES = [
-  "/images/hero-barndominium.jpg",
+  "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2000&auto=format&fit=crop",
   POOL_INTERIOR[0],
-  "/images/renders/farmhouse.jpg",
+  "https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=1600&auto=format&fit=crop",
   POOL_CONSTRUCTION[1],
   UN("photo-1600596542815-ffad4c1539a9"),
   POOL_INTERIOR[3],
-  "/images/renders/lodge.jpg",
+  "https://images.pexels.com/photos/36777966/pexels-photo-36777966.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=827&w=1400",
   POOL_CONSTRUCTION[2],
   POOL_INTERIOR[12],
-  "/images/renders/lakehouse.jpg",
+  "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=1600&auto=format&fit=crop",
 ];

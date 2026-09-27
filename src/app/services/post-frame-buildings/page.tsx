@@ -35,7 +35,7 @@ export default function PostFrameBuildingsPage() {
         eyebrow="One-stop shop · Oklahoma"
         title="Post-Frame Buildings"
         body="In search of a quality post & frame building for your project? Whether you want a shop, home, or commercial building, we can provide the whole package — design, building kit, and erection coordination. Currently only selling and erecting buildings in Oklahoma."
-        image="/images/renders/shop-rv.jpg"
+        image="https://images.pexels.com/photos/37067773/pexels-photo-37067773.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=827&w=1400"
       />
 
       {/* One stop shop */}

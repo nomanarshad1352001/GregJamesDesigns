@@ -44,7 +44,7 @@ export default function BuildingKitsPage() {
       <section className="relative overflow-hidden bg-navy-deep">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/images/renders/shop-rv.jpg"
+          src="https://images.pexels.com/photos/37067773/pexels-photo-37067773.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=827&w=1400"
           alt=""
           className="absolute inset-0 h-full w-full object-cover opacity-30"
         />
@@ -183,9 +183,9 @@ export default function BuildingKitsPage() {
           {/* Kit & framework renderings — same fade-up + slow hover-scale as plan cards */}
           <div className="mt-12 grid gap-6 sm:grid-cols-3">
             {[
-              { src: "/images/renders/shop-rv.jpg", alt: "Shop and RV barndominium kit rendering", label: "Shop & RV framework" },
-              { src: "/images/renders/farmhouse.jpg", alt: "Farmhouse barndominium kit rendering", label: "Farmhouse shell, dried-in" },
-              { src: "/images/hero-barndominium.jpg", alt: "Completed barndominium at dusk", label: "Delivered & completed" },
+              { src: "https://images.pexels.com/photos/37067773/pexels-photo-37067773.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=827&w=1400", alt: "Shop and RV barndominium kit rendering", label: "Shop & RV framework" },
+              { src: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=1600&auto=format&fit=crop", alt: "Farmhouse barndominium kit rendering", label: "Farmhouse shell, dried-in" },
+              { src: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2000&auto=format&fit=crop", alt: "Completed barndominium at dusk", label: "Delivered & completed" },
             ].map((img, i) => (
               <Reveal key={img.src} delay={i * 0.1}>
                 <figure className="group relative aspect-[4/3] overflow-hidden border border-line">

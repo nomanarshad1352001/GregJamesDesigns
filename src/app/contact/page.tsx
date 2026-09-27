@@ -93,21 +93,21 @@ export default async function ContactPage({
                 <div className="grid gap-4">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src="/images/renders/farmhouse.jpg"
+                    src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=1600&auto=format&fit=crop"
                     alt="Greg James Designs barndominium project"
                     className="aspect-[16/9] w-full border border-line object-cover"
                   />
                   <div className="grid grid-cols-2 gap-4">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
-                      src="/images/renders/lakehouse.jpg"
+                      src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=1600&auto=format&fit=crop"
                       alt="Lakefront barndominium at golden hour"
                       loading="lazy"
                       className="aspect-[4/3] w-full border border-line object-cover"
                     />
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
-                      src="/images/renders/shop-rv.jpg"
+                      src="https://images.pexels.com/photos/37067773/pexels-photo-37067773.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=827&w=1400"
                       alt="Shop and RV barndominium rendering"
                       loading="lazy"
                       className="aspect-[4/3] w-full border border-line object-cover"

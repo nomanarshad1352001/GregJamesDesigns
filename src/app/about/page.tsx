@@ -32,7 +32,7 @@ export default async function AboutPage() {
       <section className="relative overflow-hidden bg-navy-deep">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/images/hero-barndominium.jpg"
+          src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2000&auto=format&fit=crop"
           alt=""
           className="absolute inset-0 h-full w-full object-cover opacity-25"
         />
@@ -132,7 +132,7 @@ export default async function AboutPage() {
             <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {[
                 { src: POOL_CONSTRUCTION[1], alt: "House framing on the jobsite" },
-                { src: "/images/renders/lodge.jpg", alt: "Lodge barndominium rendering" },
+                { src: "https://images.pexels.com/photos/36777966/pexels-photo-36777966.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=827&w=1400", alt: "Lodge barndominium rendering" },
                 { src: POOL_INTERIOR[5], alt: "Open-plan interior with wooden beams" },
                 { src: POOL_CONSTRUCTION[4], alt: "Reviewing a roof frame" },
               ].map((img, i) => (

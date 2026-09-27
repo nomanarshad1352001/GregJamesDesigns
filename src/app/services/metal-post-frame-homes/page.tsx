@@ -27,7 +27,7 @@ export default function MetalPostFrameHomesPage() {
         eyebrow="Design services"
         title="Metal & Post-Frame Homes"
         body="We specialize in designing metal building homes and post & frame homes — quality architectural plans at an affordable rate. We're passionate about hearing your vision and providing an enjoyable experience along the way."
-        image="/images/renders/farmhouse.jpg"
+        image="https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=1600&auto=format&fit=crop"
       />
 
       <section className="py-20 lg:py-24">
@@ -61,7 +61,7 @@ export default function MetalPostFrameHomesPage() {
                 <div className="absolute -right-4 -top-4 h-full w-full border border-gold/50" aria-hidden />
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/images/renders/lodge.jpg"
+                  src="https://images.pexels.com/photos/36777966/pexels-photo-36777966.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=827&w=1400"
                   alt="Post-frame lodge style home rendering"
                   className="relative aspect-[4/3] w-full object-cover"
                 />
@@ -175,7 +175,7 @@ export default function MetalPostFrameHomesPage() {
               </p>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/images/interior-great-room.jpg"
+                src="https://images.pexels.com/photos/7746642/pexels-photo-7746642.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=827&w=1400"
                 alt="Finished metal building home interior"
                 className="mt-8 aspect-[16/10] w-full border border-line object-cover"
               />

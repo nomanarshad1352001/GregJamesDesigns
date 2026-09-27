@@ -64,20 +64,17 @@ export type TeamMember = {
   displayOrder: number;
 };
 
-/* Image helpers — stock photos (Unsplash/Pexels) are mirrored locally in
-   public/images/stock and resolved through STOCK_URLS for same-origin serving. */
-import { STOCK_URLS } from "@/lib/stock-urls";
-
-const unFull = (id: string) => `https://images.unsplash.com/${id}?q=80&w=1600&auto=format&fit=crop`;
-const pxFull = (id: string, ext = "jpeg") =>
+/* Image helpers — all photography is served from the official
+   Unsplash and Pexels CDNs. */
+const U = (id: string) =>
+  `https://images.unsplash.com/${id}?q=80&w=1600&auto=format&fit=crop`;
+const PX = (id: string, ext = "jpeg") =>
   `https://images.pexels.com/photos/${id}/pexels-photo-${id}.${ext}?auto=compress&cs=tinysrgb&fit=crop&h=827&w=1400`;
-const U = (id: string) => STOCK_URLS[unFull(id)] ?? unFull(id);
-const PX = (id: string, ext = "jpeg") => STOCK_URLS[pxFull(id, ext)] ?? pxFull(id, ext);
 
 import { POOL_LIFESTYLE } from "@/lib/media";
 
 const FLOORPLAN = "/images/floorplan-main.jpg";
-const GREAT_ROOM = "/images/interior-great-room.jpg";
+const GREAT_ROOM = "https://images.pexels.com/photos/7746642/pexels-photo-7746642.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=827&w=1400";
 
 /* ——————————————————— PLANS ——————————————————— */
 
@@ -114,7 +111,7 @@ const SEEDS: PlanSeed[] = [
       "Mudroom with drop zone and laundry",
       "Walk-in butler pantry",
     ],
-    heroImage: "/images/renders/shop-rv.jpg",
+    heroImage: "https://images.pexels.com/photos/37067773/pexels-photo-37067773.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=827&w=1400",
   },
   {
     slug: "the-modern-farmhouse",
@@ -146,7 +143,7 @@ const SEEDS: PlanSeed[] = [
       "Efficient single-story footprint",
       "Ready for detached shop pairing",
     ],
-    heroImage: "/images/renders/farmhouse.jpg",
+    heroImage: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=1600&auto=format&fit=crop",
   },
   {
     slug: "pensacola-place",
@@ -208,7 +205,7 @@ const SEEDS: PlanSeed[] = [
       "Multiple covered outdoor living areas",
       "Mudroom, safe room and walk-in pantry",
     ],
-    heroImage: "/images/renders/lodge.jpg",
+    heroImage: "https://images.pexels.com/photos/36777966/pexels-photo-36777966.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=827&w=1400",
   },
   {
     slug: "palm-cottage",
@@ -270,7 +267,7 @@ const SEEDS: PlanSeed[] = [
       "Bunk-friendly upper loft",
       "697 SF garage for lake toys",
     ],
-    heroImage: "/images/renders/lakehouse.jpg",
+    heroImage: "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=1600&auto=format&fit=crop",
   },
   {
     slug: "the-ivy-home",
@@ -363,7 +360,7 @@ const SEEDS: PlanSeed[] = [
       "485 SF garage",
       "Covered patio for outdoor dining",
     ],
-    heroImage: "/images/renders/modern.jpg",
+    heroImage: "https://images.pexels.com/photos/8134820/pexels-photo-8134820.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=827&w=1400",
   },
   {
     slug: "rachels-place",
@@ -828,7 +825,7 @@ const SEEDS: PlanSeed[] = [
       "Covered porch and patio",
       "Simple, efficient footprint",
     ],
-    heroImage: "/images/renders/cottage.jpg",
+    heroImage: "https://images.pexels.com/photos/3865399/pexels-photo-3865399.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=827&w=1400",
   },
   {
     slug: "pine-cottage",
@@ -1019,7 +1016,7 @@ export const POSTS: Post[] = [
       "People are increasingly drawn to the idea of spending more time outside. Here's why the barndominium may be the perfect architecture for that shift.",
     category: "Lifestyle",
     author: "Greg James",
-    image: "/images/renders/lakehouse.jpg",
+    image: "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=1600&auto=format&fit=crop",
     readMinutes: 4,
     publishedAt: new Date("2024-12-12"),
     content: [
@@ -1040,7 +1037,7 @@ export const POSTS: Post[] = [
       "Thinking of building a barndominium? An honest look at the pros and cons of this unique living style before you commit.",
     category: "Buying Guide",
     author: "Greg James",
-    image: "/images/renders/shop-rv.jpg",
+    image: "https://images.pexels.com/photos/37067773/pexels-photo-37067773.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=827&w=1400",
     readMinutes: 5,
     publishedAt: new Date("2024-11-19"),
     content: [
@@ -1063,7 +1060,7 @@ export const POSTS: Post[] = [
       "Weld-up, bolt-up, or wood post-frame? Here's how the three main barndominium building systems compare on cost, look, and buildability.",
     category: "Construction Systems",
     author: "Lance — Greg James Designs",
-    image: "/images/hero-barndominium.jpg",
+    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2000&auto=format&fit=crop",
     readMinutes: 6,
     publishedAt: new Date("2025-02-04"),
     content: [
@@ -1136,7 +1133,7 @@ export const POSTS: Post[] = [
       "Yes — if they're designed properly. How insulation strategy, orientation and window planning make a metal building a comfortable home.",
     category: "Design Tips",
     author: "Joselin Trejo",
-    image: "/images/renders/modern.jpg",
+    image: "https://images.pexels.com/photos/8134820/pexels-photo-8134820.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=827&w=1400",
     readMinutes: 4,
     publishedAt: new Date("2025-04-08"),
     content: [

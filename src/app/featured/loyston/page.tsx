@@ -118,10 +118,10 @@ export default function LoystonPage() {
             <Reveal delay={0.12}>
               <PlanGallery
                 images={[
-                  "/images/loyston-venue.jpg",
-                  "/images/renders/farmhouse.jpg",
+                  "https://images.pexels.com/photos/14399476/pexels-photo-14399476.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=827&w=1400",
+                  "https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=1600&auto=format&fit=crop",
                   "/images/floorplan-main.jpg",
-                  "/images/interior-great-room.jpg",
+                  "https://images.pexels.com/photos/7746642/pexels-photo-7746642.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=827&w=1400",
                 ]}
                 name="The Loyston"
               />

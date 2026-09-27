@@ -23,7 +23,7 @@ export default function EbookPage() {
     <section className="relative overflow-hidden bg-navy-deep py-20 lg:py-28">
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/images/hero-barndominium.jpg"
+        src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2000&auto=format&fit=crop"
         alt=""
         className="absolute inset-0 h-full w-full object-cover opacity-20"
       />

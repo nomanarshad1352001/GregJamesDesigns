@@ -77,7 +77,7 @@ export default function FaqsPage() {
       <section className="relative overflow-hidden border-b border-line bg-cream/60">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/images/renders/farmhouse.jpg"
+          src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=1600&auto=format&fit=crop"
           alt=""
           className="absolute inset-0 h-full w-full object-cover opacity-20"
         />
