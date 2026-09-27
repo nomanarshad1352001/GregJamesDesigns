@@ -1,0 +1,418 @@
+@import "tailwindcss";
+
+@theme {
+  /* Luxury palette — warm onyx, champagne gold, ivory */
+  --color-navy: #1b1611;
+  --color-navy-deep: #0f0c08;
+  --color-navy-soft: #2a231a;
+  --color-gold: #c7a45f;
+  --color-gold-dark: #a5833d;
+  --color-cream: #f6f2e9;
+  --color-cream-dark: #e8decb;
+  --color-ink: #191510;
+  --color-body: #6f6558;
+  --color-line: #e3dccb;
+
+  /* Motion-only glow tokens — never for static text or backgrounds */
+  --color-glow-core: #f2c572;
+  --color-trail: #16465c;
+  --color-success: #7a9b76;
+
+  --font-display: var(--font-playfair), "Playfair Display", Georgia, serif;
+  --font-sans: var(--font-manrope), "Manrope", "Helvetica Neue", Arial, sans-serif;
+
+  --shadow-card: 0 1px 2px rgba(15, 12, 8, 0.07), 0 14px 36px -14px rgba(15, 12, 8, 0.22);
+  --shadow-lift: 0 2px 4px rgba(15, 12, 8, 0.09), 0 28px 56px -18px rgba(15, 12, 8, 0.32);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: #ffffff;
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-gold);
+  color: #fff;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* Thin elegant scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+::-webkit-scrollbar-thumb {
+  background: #b7c2c6;
+  border-radius: 0;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-navy);
+}
+
+/* Fine grid textures for dark and light sections */
+.blueprint-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+.blueprint-grid-light {
+  background-image:
+    linear-gradient(rgba(27, 22, 17, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(27, 22, 17, 0.045) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+/* Marquee */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.animate-marquee {
+  animation: marquee 48s linear infinite;
+}
+.gallery-marquee:hover .animate-marquee {
+  animation-play-state: paused;
+}
+
+/* Hide scrollbars for horizontal scrollers */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+input[type="range"] {
+  accent-color: var(--color-gold);
+}
+
+/* ————— Motion layer: line-draw, light-trace, shimmer, glow ————— */
+
+:root {
+  --glow-core: #f2c572;
+  --gold-glow-edge: rgba(217, 155, 53, 0.55);
+  --motion-trail: #16465c;
+}
+
+/* "Draw, don't drop" — architectural lines resolve via dash-offset draw */
+.trace-path,
+.trace-trail {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: trace-draw var(--trace-dur, 1.15s) cubic-bezier(0.55, 0, 0.2, 1) forwards;
+}
+
+/* Slow atmospheric variant for the Custom Design elevation trace */
+.led-elevation {
+  --trace-dur: 2.9s;
+}
+@keyframes trace-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Traveling light point — one flight per session (SMIL route; CSS retires it after) */
+.led-fly-once {
+  animation: led-fly 3.4s ease-in-out forwards;
+}
+@keyframes led-fly {
+  0%,
+  8% {
+    opacity: 0;
+  }
+  18%,
+  84% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Trace lifecycle: draw once, hold the glow, settle to 15% ambient detail */
+.led-life {
+  animation: led-life 5.5s ease-out forwards;
+}
+@keyframes led-life {
+  0%,
+  78% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.15;
+  }
+}
+
+/* Gold core bloom — drop-shadow keeps it cheap; tightened on mobile below */
+.led-core {
+  filter: drop-shadow(0 0 5px rgba(232, 177, 90, 0.85));
+}
+
+/* Already traced this session: render straight to the ambient end-state */
+.led-static {
+  opacity: 0.15;
+}
+.led-static .trace-path,
+.led-static .trace-trail {
+  animation: none;
+  stroke-dashoffset: 0;
+}
+.led-static .led-window {
+  animation: none;
+  opacity: 0.9;
+}
+
+/* Windows warm up with a soft flicker once the outline resolves */
+.led-window {
+  opacity: 0;
+  animation: window-lit 3.4s ease-out forwards;
+}
+@keyframes window-lit {
+  0% {
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.85;
+  }
+  18% {
+    opacity: 0.35;
+  }
+  32%,
+  100% {
+    opacity: 0.9;
+  }
+}
+
+/* Cream shimmer — subtle sheen swept across cards on hover */
+.shimmer-sweep {
+  position: relative;
+  overflow: hidden;
+}
+.shimmer-sweep::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.1) 48%,
+    rgba(255, 255, 255, 0.06) 52%,
+    transparent 60%
+  );
+  transform: translateX(-130%);
+  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+.shimmer-sweep:hover::after,
+.group:hover > .shimmer-sweep::after {
+  transform: translateX(130%);
+}
+
+/* Animated gold underline with soft glow edge */
+.nav-underline {
+  position: relative;
+}
+.nav-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 1px;
+  height: 1px;
+  background: var(--color-gold);
+  box-shadow: 0 0 8px var(--gold-glow-edge);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.nav-underline:hover::after,
+.nav-underline:focus-visible::after,
+.nav-underline-active::after {
+  transform: scaleX(1);
+}
+
+/* Primary CTA — single cream shimmer sweep on hover (400ms, never loops) */
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+.btn-shimmer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 38%,
+    rgba(246, 242, 233, 0.5) 50%,
+    transparent 62%
+  );
+  transform: translateX(-140%);
+  transition: none;
+  pointer-events: none;
+}
+.btn-shimmer:hover::after {
+  transform: translateX(140%);
+  transition: transform 0.4s ease-out;
+}
+
+/* Warm glow edge for primary gold buttons */
+.btn-glow {
+  transition:
+    box-shadow 0.35s ease,
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+.btn-glow:hover {
+  box-shadow:
+    0 0 0 1px rgba(242, 197, 114, 0.35),
+    0 10px 28px -8px rgba(217, 155, 53, 0.5);
+}
+
+/* Logo accent pulse — 250ms brightness flash on hover; the mark itself never animates otherwise */
+@keyframes logo-pulse-kf {
+  0% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.6);
+  }
+  100% {
+    filter: brightness(1);
+  }
+}
+.group:hover .logo-mark {
+  animation: logo-pulse-kf 250ms ease-out 1;
+}
+
+/* Muted sage confirmation pulse — form success states only */
+@keyframes success-pulse-kf {
+  0% {
+    box-shadow: 0 0 0 0 rgba(122, 155, 118, 0.55);
+  }
+  100% {
+    box-shadow: 0 0 0 22px rgba(122, 155, 118, 0);
+  }
+}
+.success-pulse {
+  animation: success-pulse-kf 1s ease-out 3;
+}
+
+/* Icon micro-trace — gold outline draw on hover (desktop), once-in-view (touch) */
+.trace-icon path {
+  stroke-dasharray: 100;
+}
+@media (hover: hover) {
+  .group:hover .trace-icon {
+    color: var(--color-gold);
+    filter: drop-shadow(0 0 5px rgba(217, 155, 53, 0.8));
+  }
+  .group:hover .trace-icon path {
+    animation: icon-draw 0.65s cubic-bezier(0.55, 0, 0.15, 1);
+  }
+}
+.trace-icon.in-view {
+  color: var(--color-gold);
+}
+.trace-icon.in-view path {
+  animation: icon-draw 0.7s cubic-bezier(0.55, 0, 0.15, 1);
+}
+@keyframes icon-draw {
+  from {
+    stroke-dashoffset: 100;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Gallery switch trace — a brief frame light-run replaces the plain crossfade */
+.gallery-trace {
+  fill: none;
+  stroke: var(--glow-core);
+  stroke-width: 2;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  filter: drop-shadow(0 0 5px rgba(217, 155, 53, 0.85));
+  animation: gallery-trace-kf 0.55s cubic-bezier(0.55, 0, 0.15, 1) forwards;
+}
+@keyframes gallery-trace-kf {
+  0% {
+    stroke-dashoffset: 100;
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  72% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0;
+  }
+}
+
+/* Mobile: ~40% faster traces, tighter bloom so glows don't look muddy */
+@media (max-width: 768px) {
+  .trace-path,
+  .trace-trail {
+    animation-duration: 0.7s;
+  }
+  .led-core {
+    filter: drop-shadow(0 0 3px rgba(232, 177, 90, 0.8));
+  }
+}
+
+/* Motion accessibility: serve the static end-state — outline visible, no draw */
+@media (prefers-reduced-motion: reduce) {
+  .trace-path,
+  .trace-trail {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+  .led-life {
+    animation: none;
+    opacity: 0.15;
+  }
+  .led-fly-once {
+    display: none;
+  }
+  .trace-icon path {
+    animation: none !important;
+  }
+  .gallery-trace {
+    display: none;
+  }
+  .led-window {
+    animation: none;
+    opacity: 0.9;
+  }
+  .shimmer-sweep::after,
+  .nav-underline::after {
+    transition: none;
+  }
+  .success-pulse {
+    animation: none;
+  }
+}
